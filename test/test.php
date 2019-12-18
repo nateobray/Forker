@@ -2,10 +2,11 @@
 
 include 'vendor/autoload.php';
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 $forker = new \obray\Forker();
-$forker->fork(function($pid){
-    for($i=0; $i<10; ++$i){
-        print_r($pid . " loop " . $i . "\n");
-        sleep(1);
-    }
+$forker->fork(function($pid, $queue){
+    
 });
